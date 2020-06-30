@@ -35,7 +35,7 @@
 #ifndef FUNCTION_H
 #define FUNCTION_H
 
-#ifdef NEVER
+/*
 Map (screen) class heirarchy.
 
  MapeditClass (most derived class) -- scenario editor
@@ -108,7 +108,7 @@ Map (screen) class heirarchy.
 UnitTypeClass      ³   BuildingTypeClass      ³
                    ³                  InfantryTypeClass
            AircraftTypeClass
-#endif
+*/
 
 /*
 **	The "bool" integral type was defined by the C++ comittee in

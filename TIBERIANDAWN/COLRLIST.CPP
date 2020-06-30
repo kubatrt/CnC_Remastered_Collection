@@ -60,12 +60,13 @@
  *                                                                         *
  * HISTORY:          01/05/1995 MML : Created.                             *
  *=========================================================================*/
-ColorListClass::ColorListClass (int id, int x, int y, int w, int h,
-	TextPrintType flags, void const * up, void const * down) :
-	ListClass (id, x, y, w, h, flags, up, down)
+ColorListClass::ColorListClass (int id, int x, int y, int w, int h, 
+	TextPrintType flags, void const * up, void const * down) 
+	: ListClass (id, x, y, w, h, flags, up, down)
+	, Style(SELECT_HIGHLIGHT)
+	, SelectColor(-1)
 {
-	Style = SELECT_HIGHLIGHT;
-	SelectColor = -1;
+	
 }
 
 
@@ -109,7 +110,7 @@ ColorListClass::~ColorListClass(void)
 int ColorListClass::Add_Item(char const * text, char color)
 {
 	Colors.Add(color);
-	return(ListClass::Add_Item(text));
+	return ListClass::Add_Item(text);
 }
 
 
@@ -132,7 +133,7 @@ int ColorListClass::Add_Item(char const * text, char color)
 int ColorListClass::Add_Item(int text, char color)
 {
 	Colors.Add(color);
-	return(ListClass::Add_Item(text));
+	return ListClass::Add_Item(text);
 }
 
 
@@ -203,8 +204,6 @@ void ColorListClass::Set_Selected_Style(SelectStyleType style, int color)
  *=========================================================================*/
 void ColorListClass::Draw_Entry(int index, int x, int y, int width, int selected)
 {
-	int color;
-
 	/*
 	** Draw a non-selected item in its color
 	*/
@@ -216,6 +215,7 @@ void ColorListClass::Draw_Entry(int index, int x, int y, int width, int selected
 	/*
 	** For selected items, choose the right color & style:
 	*/
+	int color;
 	if (SelectColor==-1) {
 		color = Colors[index];
 	} else {

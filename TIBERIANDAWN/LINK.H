@@ -39,6 +39,7 @@
 **	This implements a simple linked list. It is possible to add, remove, and traverse the
 **	list. Since this is a doubly linked list, it is possible to remove an entry from the
 **	middle of an existing list.
+	Code@.
 */
 class LinkClass
 {

@@ -1449,7 +1449,7 @@ void Set_VTable(void *ptr, int base_size, void *vtable)
 }
 
 
-#if 0
+#if 1
 /****************************************************************************
 Dump routine: prints everything about everything related to the Save/Load
 process (OK, not exactly everything, but lots of stuff)

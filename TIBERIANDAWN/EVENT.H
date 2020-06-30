@@ -213,6 +213,7 @@ class EventClass
 		// Process the event.
 		void Execute(void);
 
+		// Code@. compare byte by byte -> https://en.cppreference.com/w/cpp/string/byte/memcmp
 		int operator == (EventClass & q) {
 			return memcmp(this, &q, sizeof(q)) == 0;
 		};

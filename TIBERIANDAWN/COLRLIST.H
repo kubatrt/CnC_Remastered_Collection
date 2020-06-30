@@ -40,6 +40,7 @@
 
 /***************************************************************************
 ** This class adds the ability for every list item to have a different color.
+	Code@.
 */
 class ColorListClass : public ListClass
 {

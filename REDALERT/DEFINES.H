@@ -723,7 +723,7 @@ typedef enum UrgencyType : unsigned char {
 	URGENCY_FIRST=URGENCY_CRITICAL
 } UrgencyType;
 
-
+// Code@. the tactics!
 /**********************************************************************
 **	These are the various actions a house may perform. These actions refer
 **	to global events that encompass selling and production. Low level house
