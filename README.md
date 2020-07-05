@@ -11,7 +11,12 @@ There are some problems ind bugs in the game. I saw that this code can be used t
 
 TODO:
 ========
-- Pathfinding of the harvesters. Multiple harvesters have problems with dumping in the same factory. HOW harvesters finds the seed?
+- Fix pathfinding of the harvesters. Multiple harvesters have problems with dumping in to the same factory. 
+-- HOW harvesters finds the seeds?
+-- HOW they finds the route?
+-- HOW they interact with eachother?
+- ADD Building queue
+- GUI display 'power' level of each player, (singleplayer)
 
 
 Potential problems and capability issues:
