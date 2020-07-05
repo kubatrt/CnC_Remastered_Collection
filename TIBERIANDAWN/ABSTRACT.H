@@ -84,7 +84,7 @@ class AbstractClass
 		virtual HousesType Owner(void) const {return HOUSE_NONE;};
 
 		/*
-		**	Coordinate query support functions.
+		**	Coordinate query support functions. Code@.
 		*/
 		virtual COORDINATE Center_Coord(void) const {return Coord;};
 		virtual COORDINATE Target_Coord(void) const {return Coord;};
@@ -113,7 +113,7 @@ class AbstractClass
 		virtual void AI(void) {};
 
 		/*
-		** Workaround for difference between watcom and VC destructor behavior
+		** Workaround for difference between watcom and VC destructor behavior Code@.
 		*/
 		void Delete_This(void);
 

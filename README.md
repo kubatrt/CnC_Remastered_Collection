@@ -32,14 +32,30 @@ Important classes and files:
 - VECTOR.H/CPP impelements template vector class, like this one from STL. DynamicVectorArrayClass, BooleanVectorClass, DynamicVectorClass : VectorClass<T> 
 
 
+Gameplay
+===
+
+/*
+**	This class holds the information about the current game being played. This information is
+**	global to the scenario and is generally of a similar nature to the information that was held
+**	in the controlling scenario INI file. It is safe to write this structure out as a whole since
+**	it doesn't contain any embedded pointers.
+*/
+class ScenarioClass {
+
 EXTERNS.H
+
 GLOBALS.CPP
+
 
 ADATA.
 AADATA are some unit configuration files.
 There is NEW operator overloaded, there is a object pool.
-FIXED.H
 
+Utilities
+===
+
+FIXED.H
 /*
 **	This is a very simple fixed point class that functions like a regular integral type. However
 **	it is under certain restrictions. The whole part must not exceed 65535. The fractional part is

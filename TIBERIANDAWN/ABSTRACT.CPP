@@ -110,7 +110,7 @@ unsigned short AbstractTypeClass::Get_Ownable(void) const {return 0xffff;};
 
 void AbstractClass::Delete_This(void)
 {
-	/*
+	/* Code@.
 	** Apparently Watcom preserved the vtable through the virtual destructor chain, otherwise C&C would crash all the time.
 	**
 	** MSVC doesn't. It overwrites the vtable pointer with the vtable of the class currently being destructed - presumably to 
@@ -125,7 +125,7 @@ void AbstractClass::Delete_This(void)
 	unsigned long vtable_ptr = *this_ptr;
 
 	/*
-	** delete this calls the operator delete, it doesn't actually deallocate the memory.
+	** delete this calls the operator delete, it doesn't actually deallocate the memory. Code@.
 	*/
 	delete this;
 

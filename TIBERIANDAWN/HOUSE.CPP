@@ -903,7 +903,8 @@ void HouseClass::AI(void)
 {
 	Validate();
 
-	// Set PlayerPtr to be this house. Not really keen on this solution but it means I have to make fewer code changes to the original code. ST - 4/17/2019 4:32PM
+	// Set PlayerPtr to be this house. Not really keen on this solution but it means I have to make
+	// fewer code changes to the original code. ST - 4/17/2019 4:32PM Code@. :)
 	Logic_Switch_Player_Context(this);
 
 	/*
@@ -1679,7 +1680,7 @@ void HouseClass::Attacked(BuildingClass* source)
 
 
 /***********************************************************************************************
- * HouseClass::Harvested -- Adds Tiberium to the harvest storage.                              *
+ * HouseClass::Harvested -- Adds Tiberium to the harvest storage. Code@.					   *
  *                                                                                             *
  *    Use this routine whenever Tiberium is harvested. The Tiberium is stored equally between  *
  *    all storage capable buildings for the house. Harvested Tiberium adds to the credit       *
@@ -5985,7 +5986,7 @@ bool HouseClass::AI_Raise_Power(UrgencyType urgency) const
 	//assert(Houses.ID(this) == ID);
 
 	/*
-	**	Sell off structures in this order.
+	**	Sell off structures in this order. Code@.
 	*/
 #if (0)	
 	static struct {
@@ -6723,6 +6724,7 @@ int HouseClass::AI_Unit(void)
 }
 
 
+// Code@. Vessel - container?
 int HouseClass::AI_Vessel(void)
 {
 #if (0)

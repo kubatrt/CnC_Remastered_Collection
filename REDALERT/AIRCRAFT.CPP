@@ -1626,7 +1626,7 @@ ResultType AircraftClass::Take_Damage(int & damage, int distance, WarheadType wa
 			new AnimClass(ANIM_FBALL1, Target_Coord());
 
 			/*
-			**	Parachute a survivor if possible.
+			**	Parachute a survivor if possible. Code@.
 			*/
 			if (Class->IsCrew && Percent_Chance(90) && Map[Center_Coord()].Is_Clear_To_Move(SPEED_FOOT, true, false)) {
 				InfantryClass * infantry = new InfantryClass(INFANTRY_E1, House->Class->House);

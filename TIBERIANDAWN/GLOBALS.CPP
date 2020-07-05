@@ -74,6 +74,7 @@ TFixedIHeapClass<TriggerClass>	Triggers;
 TFixedIHeapClass<TeamTypeClass>	TeamTypes;
 TFixedIHeapClass<TeamClass>		Teams;
 TFixedIHeapClass<HouseClass>		Houses;
+//TFixedIHeapClass<Reinforcments> Reinforcments;
 
 
 #ifdef PATCH

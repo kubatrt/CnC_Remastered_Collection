@@ -728,7 +728,7 @@ bool BulletClass::Unlimbo(COORDINATE coord, DirType dir)
 		int speed = Class->MaxSpeed;
 		if (speed == MPH_LIGHT_SPEED) speed = MPH_IMMOBILE;
 		if (Class->IsArcing) {
-			speed = Class->MaxSpeed + (Distance(tcoord)>>5);
+			speed = Class->MaxSpeed + (Distance(tcoord)>>5);	// Code@. >> operation
 
 			/*
 			**	Set minimum speed (i.e., distance) for arcing projectiles.

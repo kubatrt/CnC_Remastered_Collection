@@ -124,7 +124,7 @@ typedef int bool;
 #endif
 
 //#define _WIN32
-//#define WIN32 =1	//_LEAN_AND_MEAN
+//#define WIN32 =1	//_LEAN_AND_MEAN	Code@. haha oldschool macro!
 #include <windows.h>
 
 

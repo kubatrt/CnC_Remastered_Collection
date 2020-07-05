@@ -85,7 +85,7 @@
 **	This define enables the full set of cheat keys and special
 **	command line options.
 */
-#define CHEAT_KEYS
+// #define CHEAT_KEYS	// Code@.
 
 
 /**********************************************************************
@@ -2857,7 +2857,7 @@ typedef enum OptionControlType : char {
 ** 
 ** 
 */
-#ifdef USE_RA_AI
+#ifdef USE_RA_AI // Code@. AI defines
 
 
 /**********************************************************************

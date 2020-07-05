@@ -1449,7 +1449,7 @@ void Set_VTable(void *ptr, int base_size, void *vtable)
 }
 
 
-#if 1
+#if 0	// Code@.
 /****************************************************************************
 Dump routine: prints everything about everything related to the Save/Load
 process (OK, not exactly everything, but lots of stuff)
@@ -1503,7 +1503,7 @@ void Dump(void)
 	fprintf(fp,"------------------ Teams --------------------------\n");
 	fprintf(fp,"ActiveCount: %d\n",Teams.ActiveCount);
 	for (i = 0; i < TEAM_MAX; i++) {
-		fprintf(fp,"Entry %d: Active:%d Name:%s\n",i,Teams[i].IsActive,
+		fprintf(fp,"Entry %d: Active:%d Name:%s\n",i,TeamsTypes[i].IsActive,
 			Teams[i].Class->Get_Name());
 	}
 	fprintf(fp,"\n");

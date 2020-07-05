@@ -80,7 +80,7 @@ typedef int bool;
 */
 class fixed
 {
-	static constexpr unsigned int PRECISION = 1 << 16;
+	static constexpr unsigned int PRECISION = 16 << 1;	// Code@. constexpr!
 
 	public:
 		// The default constructor must not touch the data members in any way.

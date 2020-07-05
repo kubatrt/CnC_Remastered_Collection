@@ -61,7 +61,13 @@ class FixedHeapClass
 		virtual int Free(void * pointer);
 		virtual int Free_All(void);
 
-	protected:
+		/*
+		**	This is the total blocks allocated out of the heap. This number
+		**	will never exceed Count. Code@.
+		*/
+		int ActiveCount;
+
+	//protected:
 		void * operator[](int index) {return ((char *)Buffer) + (index * Size);};
 
 		/*
@@ -80,11 +86,7 @@ class FixedHeapClass
 		*/
 		int TotalCount;
 
-		/*
-		**	This is the total blocks allocated out of the heap. This number
-		**	will never exceed Count.
-		*/
-		int ActiveCount;
+
 
 		/*
 		**	Pointer to the heap's memory buffer.

@@ -355,6 +355,7 @@ class HouseClass {
 		/*
 		**	For human controlled houses, only one type of unit can be produced
 		**	at any one instant. These factory objects control this production.
+			Code@. Try to add building queue.
 		*/
 		int AircraftFactory;
 		int InfantryFactory;

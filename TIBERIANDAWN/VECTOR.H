@@ -697,7 +697,7 @@ int VectorClass<T>::Resize(unsigned newsize, T const * array)
 		if (!array) {
 			newptr = new T[newsize];
 		} else {
-			newptr = new((void*)array) T[newsize];
+			newptr = new((void*)array) T[newsize];	// Code@. PROBLEM?
 		}
 		if (!newptr) {
 			return(false);

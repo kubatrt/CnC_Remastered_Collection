@@ -39,7 +39,7 @@
 
 
 /*********************************************************************************************** 
- * Do_Reinforcements -- Create and place a reinforcement team.                                 * 
+ * Do_Reinforcements -- Create and place a reinforcement team. Code@.                          * 
  *                                                                                             * 
  *    This routine is called when a reinforcement team must be created and placed on the map.  * 
  *    It will create all members of the team and place them at the location determined from    * 
@@ -62,7 +62,8 @@ bool Do_Reinforcements(TeamTypeClass *teamtype)
 	/*
 	**	preform some preliminary checks for validity.
 	*/
-	if (!teamtype || !teamtype->ClassCount) return(false);
+	if (!teamtype || !teamtype->ClassCount)
+		return(false);
 
 	/*
 	**	Create the controlling team. All the objects are grouped
@@ -72,7 +73,8 @@ bool Do_Reinforcements(TeamTypeClass *teamtype)
 	TeamClass * team = NULL;
 	if (teamtype->MissionCount) {
 		team = new TeamClass(teamtype, HouseClass::As_Pointer(teamtype->House));
-		if (!team) return(false);
+		if (!team) 
+			return(false);
 		team->Force_Active();
 	}
 
