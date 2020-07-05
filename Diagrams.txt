@@ -1,149 +1,227 @@
-/***********************************************************************************************
- ***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               *** 
- ***********************************************************************************************
- *                                                                                             *
- *                 Project Name : Command & Conquer                                            *
- *                                                                                             *
- *                    File Name : GADGET.H                                                     *
- *                                                                                             *
- *                   Programmer : Maria del Mar McCready Legg                                  *
- *                                                                                             *
- *                   Start Date : January 3, 1995                                              *
- *                                                                                             *
- *                  Last Update : January 3, 1995   [MML]                                      *
- *                                                                                             *
- *                                                                                             *
- *        LinkClass [This is the linked list manager class. It keeps a record                  *
- *            ³      of the next and previous gadget in the list. It is possible               *
- *            ³      delete a gadget out of the middle of the list with this                   *
- *            ³      class.]                                                                   *
- *            ³                                                                                *
- *       GadgetClass [The is the basic gadget class. It handles processing of                  *
- *            ³       input events and dispatching the appropriate functions.                  *
- *            ³       All gadgets must be derived from this class.]                            *
- *            ÃÄÄÄÄ¿                                                                           *
- *            ³    ³                                                                           *
- *            ³  ListClass [Ths list class functions like a list box does in Windows. It       *
- *            ³             keeps track of a list of text strings. This list can be            *
- *            ³             scrolled and an item selected. If the list becomes larger than     *
- *            ³             can be completely displayed, it will automatically create a        *
- *            ³             slider (at the right edge) to manage the scrolling.]               *
- *            ³                                                                                *
- *      ControlClass [This class adds the concept of giving an ID number to the                *
- *            ³       gadget. This ID can then be returned from the Input()                    *
- *            ³       function as if it were a pseudo-keystroke. Additionally,                 *
- *            ³       the ability to inform another button that this button has                *
- *            ³       been actioned is allowed. This ability allows one button                 *
- *            ³       to watch what happens to another button. Example: a list                 *
- *            ³       box gadget can tell when an attached slider has been                     *
- *            ³       touched.]                                                                *
- *    ÚÄÄÄÄÄÄÄÅÄÄÄÄ¿                                                                           *
- *    ³       ³    ³                                                                           *
- *    ³       ³  GaugeClass [This class looks similar to Windows slider, but has               *
- *    ³       ³    ³         a different controlling logic. There is no thumb and              *
- *    ³       ³    ³         it serves as a simple variable control setting. This              *
- *    ³       ³    ³         is analagous to a volume slider.]                                 *
- *    ³       ³    ³                                                                           *
- *    ³       ³ SliderClass [The slider class is similar to the typical Windows slider. It     *
- *    ³       ³              has a current setting, a thumb, and a controlable scale. This     *
- *    ³       ³              is the object created to handle a scrolling list box.]            *
- *    ³       ³                                                                                *
- *    ³   EditClass                                                                            *
- *    ³                                                                                        *
- *    ³                                                                                        *
- * ToggleClass [The toggle class is used for buttons that have an image and behave just        *
- *    ³         like the buttons in Windows do. That is, they have a separate visual for       *
- *    ³         when they are pressed and raised. They are officially triggered (return        *
- *    ³         their ID number) when the mouse button is released while over the button.      *
- *    ³         This class doesn't perform any rendering itself. It merely provides the        *
- *    ³         logic so that the derived classes will function correctly.]                    *
- *  ÚÄÁÄÄÄÄ¿                                                                                   *
- *  ³      ³                                                                                   *
- *  ³   TextButtonClass [The text button functions like a normal Windows style button, but     *
- *  ³                    the imagery is based on text that is displayed on the button. A       *
- *  ³                    typical example would be the "OK" or "Cancel" buttons.]               *
- *  ³                                                                                          *
- * ShapeButtonClass [The shape buttons is similar to the TextButton but instead of text        *
- *                   being used to give the button its imagery, an actual shape is used        *
- *                   instead. This allows graphic buttons. These are similar to the up/down    *
- *                   arrows seen in a Windows slider.]                                         *
- *                                                                                             *
- * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@startuml
 
- /*
- Map (screen) class heirarchy.
+title GUI Controls
 
- MapeditClass (most derived class) -- scenario editor
+class LinkClass{
+[This is the linked list manager class. It keeps a record
+of the next and previous gadget in the list. It is possible
+delete a gadget out of the middle of the list with this class.]
+}
+
+class GadgetClass{
+[The is the basic gadget class. It handles processing of
+input events and dispatching the appropriate functions.
+All gadgets must be derived from this class.]
+}
+
+class ListClass{
+[Ths list class functions like a list box does in Windows.
+It keeps track of a list of text strings. This list can be
+scrolled and an item selected. If the list becomes larger than
+can be completely displayed, it will automatically create a
+slider (at the right edge) to manage the scrolling.]
+}
+
+class ControlClass{
+[This class adds the concept of giving an ID number to the   
+gadget. This ID can then be returned from the Input()        
+function as if it were a pseudo-keystroke. Additionally,     
+the ability to inform another button that this button has    
+been actioned is allowed. This ability allows one button     
+to watch what happens to another button. Example: a list     
+box gadget can tell when an attached slider has been         
+touched.]   
+}
+
+class GaugeClass{
+[This class looks similar to Windows slider, but has
+a different controlling logic. There is no thumb and
+it serves as a simple variable control setting. This
+is analagous to a volume slider.] 
+} 
+ 
+class SliderClass{
+[The slider class is similar to the typical Windows slider. It
+has a current setting, a thumb, and a controlable scale. This
+is the object created to handle a scrolling list box.]
+class EditClass{
+}
+
+class ToggleClass{
+[The toggle class is used for buttons that have an image and behave just 
+like the buttons in Windows do. That is, they have a separate visual for
+when they are pressed and raised. They are officially triggered (return
+their ID number) when the mouse button is released while over the button.
+This class doesn't perform any rendering itself. It merely provides the
+logic so that the derived classes will function correctly.]
+}
+
+class TextButtonClass{
+[The text button functions like a normal Windows style button, but
+the imagery is based on text that is displayed on the button.
+A typical example would be the "OK" or "Cancel" buttons.]
+}
+
+class ShapeButtonClass{
+[The shape buttons is similar to the TextButton but instead of text
+being used to give the button its imagery, an actual shape is used
+instead. This allows graphic buttons. These are similar to the up/down
+arrows seen in a Windows slider.]
+}
+
+LinkClass<|-down-GadgetClass
+GadgetClass<|-down-ControlClass
+ControlClass<|-downListClass
+ControlClass<|-down-EditClass
+ControlClass<|-down-ToggleClass
+ControlClass<|-down-GaugeClass
+GaugeClass<|-down-SliderClass
+ToggleClass<|-down-TextButtonClass
+ToggleClass<|-down-ShapeButtonClass
+
+@enduml
+
+@startuml
+
+title Map (Screen) Class Diagram
+
+class MapeditClass {
+(most derived class) -- scenario editor
+}
+class MouseClass {
+handles mouse animation and display control
+}
+class ScrollClass {
+map scroll handler
+}
+class HelpClass{
+pop-up help text handler
+}
+class TabClass{
+file folder tab screen mode control dispatcher
+}
+class SidebarClass{
+displays and controls construction list sidebar
+}
+class PowerClass{
+display power production/consumption bargraph
+}
+class RadarClass{
+displays and controls radar map
         ³
-   MouseClass -- handles mouse animation and display control
-        ³
-  ScrollClass -- map scroll handler
-        ³
-    HelpClass -- pop-up help text handler
-        ³
-     TabClass -- file folder tab screen mode control dispatcher
-        ³
- SidebarClass -- displays and controls construction list sidebar
-        ³
-   PowerClass -- display power production/consumption bargraph
-        ³
-   RadarClass -- displays and controls radar map
-        ³
- DisplayClass -- general tactical map display handler
-        ³
-     MapClass -- general tactical map data handler
-        ³
- GScreenClass (pure virtual base class) -- generic screen control
+}
+class DisplayClass{
+general tactical map display handler
+}
+class MapClass{
+ general tactical map data handler
+}
+class GScreenClass{
+(pure virtual base class) -- generic screen control
+}
+class VectorClass
+
+' Map screen class heirarchy.
+
+MapeditClass<|-down-MouseClass
+MouseClass<|-down-ScrollClass
+ScrollClass<|-down-HelpClass
+HelpClass<|-down-TabClass
+TabClass<|-down-SidebarClass
+SidebarClass<|-down-PowerClass
+PowerClass<|-down-RadarClass
+RadarClass<|-down-DisplayClass
+DisplayClass<|-down-MapClass
+MapClass<|-down-GScreenClass
+GScreenClass<|-down-VectorClass
+
+@enduml
+
+
+@startuml
+
+title Game Architecture 1st Diagram
+
+class AbstractClass
+class ObjectClass
+class AnimClass
+class TemplateClass
+class FuseClass
+class TerrainClass
+class FlyClass
+class BulletClass
+class OverlayClass
+class MissionClass
+class SmudgeClass
+class RadioClass
+class CrewClass
+class FlasherClass
+class StageClass
+class CargoClass
+class TechnoClass
+class FootClass
+class BuildingClass
+class DriveClass
+class InfantryClass
+class FlyClass
+class AircraftClass
+class TurretClass
+class TarComClass
+class UnitClass
+
+AbstractClass<|-down-ObjectClass
+ObjectClass<|-down-AnimClass
+ObjectClass<|-down-OverlayClass
+ObjectClass<|-down-TemplateClass
+ObjectClass<|-down-MissionClass
+ObjectClass<|-down-BulletClass
+ObjectClass<|-down-FuseClass
+ObjectClass<|-down-SmudgeClass
+ObjectClass<|-down-TerrainClass
+MissionClass<|-down-RadioClass
+CrewClass<|-down-TechnoClass
+FlasherClass<|-down-TechnoClass
+StageClass<|-down-TechnoClass
+CargoClass<|-down-TechnoClass
+RadioClass<|-down-TechnoClass
+TechnoClass<|-down-FootClass
+TechnoClass<|-down-BuildingClass
+FootClass<|-down-DriveClass
+FootClass<|-down-InfantryClass
+FootClass<|-down-AircraftClass
+FootClass<|-down-FlyClass
+DriveClass<|-down-TurretClass
+TurretClass<|-down-TarComClass
+TarComClass<|-down-UnitClass
+
+@enduml
+
+
+@startuml
+
+title Game Architecture 2nd Diagram
+
+class AbstractTypeClass
+class ObjectTypeClass
+class TechnoTypeClass
+class BulletTypeClass
+class TemplateTypeClass
+class TerrainTypeClass
+class UnitTypeClass
+class BuildingTypeClass
+class InfantryTypeClass
+class AircraftTypeClass
 
 
 
-                            AbstractClass
-                                  ³
-                                  ³
-                                  ³
-                                  ³
-                            ObjectClass
-                                  ³
-       ÚÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄ¿
-   AnimClass  ³  TemplateClass    ³        ÃÄ FuseClass     ³    TerrainClass
-              ³                   ³        ÃÄ FlyClass      ³
-              ³                   ³  BulletClass            ³
-       OverlayClass        MissionClass               SmudgeClass
-                                  ³
-                             RadioClass
-                                  ³
-                                  ÃÄ CrewClass
-                                  ÃÄ FlasherClass
-                                  ÃÄ StageClass
-                                  ÃÄ CargoClass
-                            TechnoClass
-                                  ³
-         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-     FootClass                                         BuildingClass
-         ³
-         ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-    DriveClass  InfantryClass         ÃÄ FlyClass
-         ³                      AircraftClass
-   TurretClass
-         ³
-   TarComClass
-         ³
-     UnitClass
+AbstractTypeClass<|-down-ObjectTypeClass
+ObjectTypeClass<|-down-BulletTypeClass
+ObjectTypeClass<|-down-TemplateTypeClass
+ObjectTypeClass<|-down-TerrainTypeClass
+ObjectTypeClass<|-down-TechnoTypeClass
+TechnoTypeClass<|-down-UnitTypeClass
+TechnoTypeClass<|-down-AircraftTypeClass
+TechnoTypeClass<|-down-BuildingTypeClass
+TechnoTypeClass<|-down-InfantryTypeClass
 
-
-                            AbstractTypeClass
-                                    ³
-                              ObjectTypeClass
-                                    ³
-             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-             ³                      ³            ³                 ³
-       TechnoTypeClass              ³            ³                 ³
-             ³                BulletTypeClass    ³                 ³
-             ³                           TemplateTypeClass         ³
-    ÚÄÄÄÄÄÄÄÄÁÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿             TerrainTypeClass
-    ³              ³           ³              ³
-UnitTypeClass      ³   BuildingTypeClass      ³
-                   ³                  InfantryTypeClass
-           AircraftTypeClass
-*/
-
+@enduml

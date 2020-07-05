@@ -167,11 +167,22 @@ enum MapEditButtonIDEnum{
 ******************************* Declarations ********************************
 */
 class TeamTypeClass;
+class MapEditClass;
 
 /*
 ***************************** Class Declaration *****************************
 */
-class MapEditClass : public MouseClass 
+// Code@. Mark class as 'final' workaround.
+class MakeFinalClass
+{
+private:
+	MakeFinalClass() {};
+
+	friend MapEditClass;
+};
+
+
+class MapEditClass : public MouseClass, virtual MakeFinalClass
 {
 	/*
 	---------------------------- Public Interface ----------------------------
