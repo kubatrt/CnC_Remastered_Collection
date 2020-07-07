@@ -1,23 +1,28 @@
 #CnC_Remastered_Collection
 
-Reading this code is pretty amazing experience, CnC is my game of childhood.
-Lets try to keep it more new starads friendly.
-Also checkout Jason Turner video on YT about this code.
+Reading this code is pretty amazing experience, CnC is my one of favoruite game of childhood.
+Lets try to keep it more new C++ starads friendly, also checkout Jason Turner video on YT about this code.
 
 Assumptions:
 ========
-The code should compile both on linux and windows.
+The code should compile both on linux and windows platform.
 There are some problems ind bugs in the game. I saw that this code can be used to develop mods for the game.
+
 
 TODO:
 ========
-- Fix pathfinding of the harvesters. Multiple harvesters have problems with dumping in to the same factory. 
+- FIX pathfinding of the harvesters. Multiple harvesters have problems with dumping in to the same factory. 
+- FIX harvaster should turn back to nearest factory
+- FIX pathfinding, when moving unit stuck, unit calculate new path, often around the map and its going back intead of attack
+- ADD Building queue
+- GUI display 'power' level of each player, (singleplayer)
+- prepare CMake project
+
+FINDOUT:
+========
 -- HOW harvesters finds the seeds?
 -- HOW they finds the route?
 -- HOW they interact with eachother?
-- ADD Building queue
-- GUI display 'power' level of each player, (singleplayer)
-
 
 Potential problems and capability issues:
 ========

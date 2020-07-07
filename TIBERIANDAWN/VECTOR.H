@@ -73,6 +73,7 @@ inline void * operator new[](size_t , void * pointer) {return(pointer);}
 **	equality operator could be highly optimized if the integral type were known.
 **	This efficiency can be implemented by deriving an integral vector template
 **	from this one in order to supply more efficient routines.
+Code@. It's really nice to see template code from the code from 95!
 */
 template<class T> 
 class VectorClass

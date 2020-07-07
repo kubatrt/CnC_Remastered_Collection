@@ -65,7 +65,7 @@ class AbstractClass
 		COORDINATE Coord;
 
 		/*
-		**	This is the height of the object above ground (expressed in leptons).
+		**	This is the height of the object above ground (expressed in leptons).	Code@. WHAT IS LEPTONS!?
 		*/
 		int Height;
 

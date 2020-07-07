@@ -582,7 +582,7 @@ typedef int		WAYPOINT;
 /**********************************************************************
 **	This is the target composit information. Notice that with an RTTI_NONE
 **	and an index value of 0, the target value returned is identical with
-**	TARGET_NONE. This is by design and is necessary.
+**	TARGET_NONE. This is by design and is necessary. Code@.
 */
 typedef long	TARGET;
 
@@ -623,7 +623,7 @@ inline TARGET Build_Target(RTTIType kind, int value)
 #define	REGION_HEIGHT		4
 #define	MAP_REGION_WIDTH	(((MAP_CELL_W + (REGION_WIDTH -1)) / REGION_WIDTH)+2)
 #define	MAP_REGION_HEIGHT	(((MAP_CELL_H + (REGION_WIDTH -1)) / REGION_HEIGHT)+2)
-#define  MAP_TOTAL_REGIONS	(MAP_REGION_WIDTH * MAP_REGION_HEIGHT)
+#define MAP_TOTAL_REGIONS	(MAP_REGION_WIDTH * MAP_REGION_HEIGHT)
 
 
 /**********************************************************************
@@ -634,7 +634,7 @@ typedef enum FearType : unsigned char {
 	FEAR_NONE=0,			// No fear at all (default state).
 	FEAR_ANXIOUS=10,		// Something makes them scared.
 	FEAR_SCARED=100,		// Scared enough to take cover.
-	FEAR_PANIC=200,		// Run away! Run away!
+	FEAR_PANIC=200,			// Run away! Run away!
 	FEAR_MAXIMUM=255		// Scared to death.
 } FearType;
 
