@@ -9,14 +9,6 @@ The code should compile both on linux and windows platform.
 There are some problems ind bugs in the game. I saw that this code can be used to develop mods for the game.
 
 
-TODO:
-========
-- FIX pathfinding of the harvesters. Multiple harvesters have problems with dumping in to the same factory. 
-- FIX harvaster should turn back to nearest factory
-- FIX pathfinding, when moving unit stuck, unit calculate new path, often around the map and its going back intead of attack
-- ADD Building queue
-- GUI display 'power' level of each player, (singleplayer)
-- prepare CMake project
 
 FINDOUT:
 ========
