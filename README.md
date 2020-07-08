@@ -1,41 +1,35 @@
-#CnC_Remastered_Collection
-
+# CnC_Remastered_Collection
 Reading this code is pretty amazing experience, CnC is my one of favoruite game of childhood.
 Lets try to keep it more new C++ starads friendly, also checkout Jason Turner video on YT about this code.
 
-Assumptions:
-========
+# Assumptions
 The code should compile both on linux and windows platform.
 There are some problems ind bugs in the game. I saw that this code can be used to develop mods for the game.
 
 
 
-FINDOUT:
-========
--- HOW harvesters finds the seeds?
--- HOW they finds the route?
--- HOW they interact with eachother?
+# FINDOUT
 
-Potential problems and capability issues:
-========
-- Initialization fields by colon ':'.
-- Boolean threaded as int.
+* HOW harvesters finds the seeds?
+* HOW they finds the route?
+* HOW they interact with eachother?
 
-Hints:
-========
+# Potential problems and capability issues
+* Initialization fields by colon ':'.
+* Boolean threaded as int.
+
+# Hints
 in the Save/Load system there is always a palce (buffer) for eventualy additional data to keep game compatible after updates.
 
 
-Important classes and files:
-========
+# Important classes and files
 
-- The GUI system is described in GADGET.H
-- LIST.H represents linked list implementation.
-- VECTOR.H/CPP impelements template vector class, like this one from STL. DynamicVectorArrayClass, BooleanVectorClass, DynamicVectorClass : VectorClass<T> 
+* The GUI system is described in GADGET.H
+* LIST.H represents linked list implementation.
+* VECTOR.H/CPP impelements template vector class, like this one from STL. DynamicVectorArrayClass, BooleanVectorClass, DynamicVectorClass : VectorClass<T> 
 
 
-Gameplay
-===
+# Gameplay
 
 /*
 **	This class holds the information about the current game being played. This information is
@@ -127,8 +121,9 @@ class BaseClass
 
 
 
-Diagrams:
-========
+# Diagrams
+
+* located in Diagrams.txt file
 
 /***********************************************************************************************
  ***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               *** 
