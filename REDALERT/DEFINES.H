@@ -524,7 +524,7 @@ typedef enum DiffType : unsigned char {
 **	with cell resolution. The COORDINATE type is used for map coordinates that
 **	have a lepton resolution. CELL is more efficient when indexing into the map
 **	and when size is critical. COORDINATE is more efficient when dealing with
-**	accuracy and object movement.
+**	accuracy and object movement. Code@. Important!
 */
 typedef unsigned short	LEPTON;
 typedef union {
@@ -3614,8 +3614,7 @@ typedef enum OptionControlType : char {
 } OptionControlType;
 
 
-#define size_of(typ,id) sizeof(((typ*)0)->id)
-
+#define size_of(typ,id) sizeof(( (typ*)0 )->id)	// Code@. sizeof?
 
 #define MAX_LOG_LEVEL		10
 

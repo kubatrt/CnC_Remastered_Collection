@@ -132,7 +132,7 @@ class WarheadTypeClass
 
 /**********************************************************************
 **	Each house has certain unalienable characteristics. This structure
-**	elaborates these.
+**	elaborates these. Code@. HouseTypeClass
 */
 class HouseTypeClass {
 	public:
@@ -163,10 +163,11 @@ class HouseTypeClass {
 		char Suffix[4];
 
 		/*
-		**	This is the "lemon percentage" to use when determining if a particular
+		**	This is the "lemon percentage" (Code@. interesting...) to use when determining if a particular
 		**	object owned by this house is to be flagged as a "lemon". Objects so
 		**	flagged have a greater break-down chance. The percentage is expressed
 		**	as a fixed point number with 0x000 meaning 0% and 0x100 meaning 100%.
+		
 		*/
 		unsigned Lemon;
 

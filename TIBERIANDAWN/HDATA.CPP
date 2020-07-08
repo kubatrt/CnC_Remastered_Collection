@@ -46,7 +46,7 @@ const int COLOR_BRIGHT_BAD = 127;	//RED;
 const int COLOR_NEUTRAL = 205;	//WHITE;
 const int COLOR_BRIGHT_NEUTRAL = 202;	//WHITE;
 
-
+// @Code@. static object declaraion !?
 static HouseTypeClass const HouseGood(
 	HOUSE_GOOD,
 	"GoodGuy",					//	NAME:			House name.
@@ -177,6 +177,7 @@ static HouseTypeClass const HouseMulti6(
 	'M'							// VOICE:		Voice prefix character.
 );
 
+// Code@. Houses declaration here, static array of pointers 
 HouseTypeClass const * const HouseTypeClass::Pointers[HOUSE_COUNT] = {
 	&HouseGood,
 	&HouseBad,
